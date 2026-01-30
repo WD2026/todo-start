@@ -87,13 +87,12 @@ class TodoDao:
         :param todo_create: a TodoCreate object with info for the new Todo.
         :return: The created Todo with its assigned id.
         """
-        with self.lock:
-            todo_id = self._next_id()
-            # model_dump is provided by Pydantic Model class.
-            todo = Todo(id=todo_id, **todo_create.model_dump())
-            self.todos[todo_id] = todo
-            # terribly inefficient but write all todos each time.
-            self._write_all(list(self.todos.values()))
+        todo_id = self._next_id()
+        # model_dump is provided by Pydantic Model class.
+        todo = Todo(id=todo_id, **todo_create.model_dump())
+        self.todos[todo_id] = todo
+        # terribly inefficient but write all todos each time.
+        self._write_all(list(self.todos.values()))
         return todo
 
     def update(self, todo: Todo) -> Todo:

@@ -13,8 +13,6 @@ dao = TodoDao("todo_data.json")
 # use param: redirect_slashes=False to disable automatic
 # redirection of paths without trailing slash.
 app = FastAPI(title="Todo REST API")
-#
-# To automatically fix paths without an ending '/'
 
 
 ### REST service URLs and request handlers ###
