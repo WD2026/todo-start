@@ -11,7 +11,7 @@ methods for a "/todo" endpoint.
 | File                 | Contents           |
 |:---------------------|:-------------------|
 | `models.py`          | Classes for Todo and TodoCreate. Used for serialization and input validation. |
-| `persistence.py`     | Simple persistence of Todo objects. |
+| `persistence.py`     | `TodoDao` class provides persistence for Todo objects. |
 | `main.py`            | FastAPI code to run the application. |
 
 ## How to Build and Run
