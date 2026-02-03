@@ -99,7 +99,7 @@ class TodoDao:
         """Update an existing Todo."""
         todo_id = todo.id
         if todo_id not in self.todos:
-            raise ValueError(f"Todo id {todo.id} not found")
+            raise ValueError(f"Todo id {todo.id} not found in saved Todos")
         self.todos[todo_id] = todo
         self._write_all(list(self.todos.values()))
         return todo
